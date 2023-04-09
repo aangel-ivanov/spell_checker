@@ -1,0 +1,13 @@
+count
+add monkey
+add monkey
+add alligator
+add_follows zebra
+count
+add unicorn
+remove unicorn
+search unicorn
+search monkey
+get 0
+get 1
+get 2

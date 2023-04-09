@@ -1,0 +1,9 @@
+CUCKOOFILTER 3 2 2 2 
+INSERT alice
+INSERT bob
+PRINT
+LOOKUP alice
+LOOKUP charles
+REMOVE alice
+REMOVE charles
+PRINT

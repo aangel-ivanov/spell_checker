@@ -1,0 +1,11 @@
+length
+insert_end apple
+item_at 0
+insert_at 0 banana
+replace_at 0 cherry
+swap 0 1
+print
+remove_at 1
+dup
+remove_end
+length
