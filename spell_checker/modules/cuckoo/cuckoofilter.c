@@ -5,7 +5,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include "cs136-trace.h"
 #include "cuckoofilter.h"
 #include "random.h"
 
