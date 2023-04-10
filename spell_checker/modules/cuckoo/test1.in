@@ -1,4 +1,4 @@
-CUCKOOFILTER 3 2 2 2 
+CUCKOOFILTER 3 3 2 2 
 INSERT alice
 INSERT bob
 INSERT john
@@ -6,16 +6,21 @@ INSERT judy
 INSERT jason
 INSERT jonah
 INSERT olivia
+PRINT
 INSERT emma
 INSERT audrey
 INSERT alicia
 INSERT maya
 INSERT fin
+PRINT
 INSERT philip
 INSERT sasha
-INSERT ivailo 
+PRINT
+INSERT ivailo
 INSERT nancy
+PRINT
 INSERT mary
 INSERT susan
 INSERT sarah
 INSERT megan
+PRINT
