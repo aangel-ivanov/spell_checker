@@ -174,21 +174,22 @@ int cuckoo_insert(struct cuckoofilter *cf, const char *key) {
     idx = idx_2;
   }
   // printf("idx = %d\n", idx);
-  char **bucket = ht->buckets[idx]->entries;
   for (int i = 0; i < cf->max_num_kicks; ++i) {
+    char **bucket = ht->buckets[idx]->entries;
     // randomly select an entry from bucket[idx]
     char **entry = random_bucket_entry(bucket, ht->nof_entries);
-    // printf("entry[0] is %s\n", entry[0]);
+    // printf("entry is %s\n", *entry);
     // swap fp and entry
     char *temp = malloc(strlen(*entry) + 1);
     strcpy(temp, *entry);
     strcpy(*entry, fp);
     strcpy(fp, temp);
     // printf("we made the swap!\n");
+    // cuckoo_print(cf);
     free(temp);
     // get new index
     idx = idx ^ ht->hash_func(fp, ht->hash_len);
-    // printf("idx is now %d\n", idx);
+    printf("idx is now %d\n", idx);
     // check for empty entry
     for (int i = 0; i < ht->nof_entries; ++i) {
       if (ht->buckets[idx]->entries[i] == NULL) {
@@ -199,6 +200,7 @@ int cuckoo_insert(struct cuckoofilter *cf, const char *key) {
         return CUCKOO_SUCCESS;
       }
     }
+    // printf("we didnt find a new entry, we are reallocating again\n");
   }
   // hashtable is full
   free(fp);
